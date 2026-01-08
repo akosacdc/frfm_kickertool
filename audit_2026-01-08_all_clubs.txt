@@ -1,0 +1,67 @@
+TOURNAMENT ROSTERS (men/women/junior/mixed):
+
+=== acefoosballbucharest/NBC vol. II Monster DYP ===
+men(12): Adi Pavelescu, Ana Bobe, Alex Mocanu, Cristi Marinescu, Damian Mititelu, Valentina Marin, Catalina Done, Hunor Lado, Alex Iamandi, Andreea Nimigean, Diana Dumitru, Diana Lita
+women(5): Ana Bobe, Valentina Marin, Andreea Nimigean, Diana Dumitru, Diana Lita
+junior(0): 
+mixed(0): 
+
+=== goal_diggers_foosball/Goal Diggers Cup - Vol. 5 - DYP - 2025-12-27 ===
+men(12): Kolumban Istvan, Laszlo Peter, Meszaros Tibor, Nyisztor Istvan, Bodrogi Balazs, Gaspar Tibor, Szengyel Szabolcs, Vajna Gabor, Csiki Attila, Vajna Hunor, Vari Szilamer, Zsombori Attila
+women(0): 
+junior(0): 
+mixed(0): 
+
+=== goal_diggers_foosball/Goal Diggers Cup - Vol. 5 - GW - 2025-12-27 ===
+men(6): Kolumban Istvan, Meszaros Tibor, Szengyel Szabolcs, Vajna Gabor, Laszlo Peti, Zsombori Attila
+women(0): 
+junior(0): 
+mixed(0): 
+
+=== goal_diggers_foosball/Goal Diggers Cup - Vol. 5 - OD - 2025-12-27 ===
+men(14): Kolumban Istvan, Csiki Attila, Vajna Gabor, Peter Robert, Ujvari Gyorgy, Gaspar Tibor, Nyisztor Istvan, Bodrogi Balazs, Laszlo Peter, Vajna Hunor, Racz Gabor, Gyorgy-Lorinc Tunde, Derzsi Szilard, Szelyes Szilard
+women(0): 
+junior(0): 
+mixed(0): 
+
+=== goal_diggers_foosball/Goal Diggers Odorhei Cup - Vol. 4 - OS - 2025-11-15 ===
+men(6): Kolumbán István, Vajna Gábor, Mészáros Tibor, Csiki Attila, Derzsi Szilárd, Péter Róbert
+women(0): 
+junior(0): 
+mixed(0): 
+
+=== spacerebels/Bucharest Leonhart II Doubles ===
+men(22): Ana Bobe, Diana Lita, Hunor Szocs, Dragos Cirlan, Adrian Pavelescu, Stefanut Jianu, Catalin Bichi, Markus Hautz, Damian Mititelu, Mykola Poroshyn, Eugen Dumitrescu, Cristian Marinescu, Silvia Pintilii, Isabela Oancea, Valentina Marin, Anamaria Labaditis, Alexandra Croitoru, Cosmin Frone, Andrei Musteata, Niculae Dragomir, Diana Dumitru, Gabriel Matei
+women(7): Ana Bobe, Diana Lita, Silvia Pintilii, Isabela Oancea, Valentina Marin, Alexandra Croitoru, Diana Dumitru
+junior(2): Hunor Szocs, Dragos Cirlan
+mixed(0): 
+
+=== spacerebels/Underworild Cup - Etapa 11 ===
+men(11): Valentina Marin, Adrian Pavelescu, Eugen Dumitrescu, Andreea Nimigean, Andrei Musteata, Diana Lita, Silvia Pintilii, Alexandru Mocanu, Catalin Bichi, Diana Dumitru, Kiana Pascenco
+women(5): Valentina Marin, Andreea Nimigean, Diana Lita, Silvia Pintilii, Diana Dumitru
+junior(0): 
+mixed(0): 
+
+=== spacerebels/Underworld Cup 10 ===
+men(10): Eugen Dumitrescu, Stefanut Jianu, Diana Lita, Silvia Pintilii, Andreea Nimigean, Andrei Musteata, Ana Bobe, Diana Dumitru, Adrian Pavelescu, Isabela Oancea
+women(6): Diana Lita, Silvia Pintilii, Andreea Nimigean, Ana Bobe, Diana Dumitru, Isabela Oancea
+junior(0): 
+mixed(0): 
+
+=== wolfpack/Monster DYP 14.11.2025 ===
+men(24): Bogdan Panoiu, Diana Dan, Najib Malli, Teodora Musteata-Cacoveanu, Alexandru Gavrilescu, Roxana Constantinescu, Alexandra Bitoiu, Iulia Cernat, Adina Costache, Andrei Andreianu, Brianna Popa, Catalin Ciupitu, Cosmin Pojar, Maria Mizhevska, Rami Abu Sereya, Vincent Clerc, Alexa Crisan, Alexandru Ilie, Andreea Constandinescu, Cristi Constantin, Mihai Nae, Perla Rotaru, Radu Toma, Serban Obreja
+women(5): Diana Dan, Roxana Constantinescu, Iulia Cernat, Adina Costache, Alexa Crisan
+junior(0): 
+mixed(0): 
+
+=== wolfpack/WOLFPACK OPEN 4 - OPEN SINGLES ===
+men(12): Bogdan Panoiu, Najib Malli, Alex Tone, Adrian Pavelescu, Alex Gavrilescu, Mircea Dumitrescu, Mykola Poroshyn, Alex Ilie, Alex State, Cosmin Pojar, Mircea Manta, Vladyslav Moroz
+women(0): 
+junior(0): 
+mixed(0): 
+
+=== wolfpack/WOLFPACK OPEN 4 - WOMEN DOUBLES ===
+men(12): Ana Bobe, Silvia Pintilii, Adina Costache, Diana Dan, Isabela Oancea, Julieta Pop, Alexa Crisan, Alina Pipko, Andreea Constadinescu, Mariia Mizhevska, Diana Lita, Roxana Constantinescu
+women(12): Ana Bobe, Silvia Pintilii, Adina Costache, Diana Dan, Isabela Oancea, Julieta Pop, Alexa Crisan, Alina Pipko, Andreea Constadinescu, Mariia Mizhevska, Diana Lita, Roxana Constantinescu
+junior(0): 
+mixed(0):

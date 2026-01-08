@@ -71,10 +71,26 @@ for col in range(10):
     except ValueError:
         raise ValueError(f"Non-numeric value '{level_row.iloc[col]}' in points column.")
 
+
+def bucket_place(place: int) -> int:
+    """Map an arbitrary placement to the nearest FRFM points bucket.
+
+    Example: 6/7/8 -> 5, 10..16 -> 9, etc.
+    """
+    # find the largest bucket <= place
+    bucket = places[0]
+    for p in places:
+        if p <= place:
+            bucket = p
+        else:
+            break
+    return bucket
+
 print(points_mapping)
 
 for (place, name) in placements:
-    print(name[0], points_mapping[place])
+    bp = bucket_place(place)
+    print(name[0], points_mapping[bp])
 
 category_df = pd.DataFrame(category_sheet.values)
 category_df.columns = category_df.iloc[0]
@@ -103,6 +119,7 @@ category_sheet.cell(row=6, column=new_tournament_column).value = tournament_leve
 print(first_empty_row)
 
 for (place, name) in placements:
+    bp = bucket_place(place)
     found = False
     # Loop through column B (column index 2)
     for row in range(1, first_empty_row):
@@ -113,21 +130,21 @@ for (place, name) in placements:
             #print(str(cell_value).strip().lower())
             #print(name[0].strip().lower())
             if cell_value and str(cell_value).strip().lower() == name[0].strip().lower():
-                category_sheet.cell(row=row, column=new_tournament_column).value = points_mapping[place]
+                category_sheet.cell(row=row, column=new_tournament_column).value = points_mapping[bp]
                 found = True
                 print(f"Player '{name[0]}' found on row {row}")
         else:
             first_last = " ".join(parts)
             last_first = " ".join(parts[::-1])
             if (cell_value and unidecode(str(cell_value).strip().lower()) == unidecode(first_last)) or (cell_value and unidecode(str(cell_value).strip().lower()) == unidecode(last_first)) :
-                category_sheet.cell(row=row, column=new_tournament_column).value = points_mapping[place]
+                category_sheet.cell(row=row, column=new_tournament_column).value = points_mapping[bp]
                 found = True
                 print(f"Player '{name[0]}' found on row {row}")
     if not found:
         print(f"Player {name[0]} wasn't found in excel. Adding as a new row...")
         category_sheet.cell(row=first_empty_row, column=1).value = first_empty_row - 5
         category_sheet.cell(row=first_empty_row, column=2).value = unidecode(name[0])
-        category_sheet.cell(row=first_empty_row, column=new_tournament_column).value = points_mapping[place]
+        category_sheet.cell(row=first_empty_row, column=new_tournament_column).value = points_mapping[bp]
 
         # Fill empty cells in new row
         for col in range(9, new_tournament_column):
