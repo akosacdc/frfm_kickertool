@@ -1,8 +1,10 @@
 import argparse
 import re
 import os
+import sys
 from openpyxl import load_workbook # type: ignore
 import pandas as pd # type: ignore
+from unidecode import unidecode
 
 parser = argparse.ArgumentParser(description="Update foosball ranking Excel sheet with tournament results.")
 parser.add_argument("--results", required=True, help="Path to the .txt file with results.")
@@ -10,13 +12,14 @@ parser.add_argument("--excel", required=True, help="Path to the existing Excel f
 parser.add_argument("--tournament", required=True, help="Name of the tournament.")
 parser.add_argument("--level", required=True, help="Tournament level as defined in the Points Lookup sheet.")
 parser.add_argument("--category", required=True, help="Category sheet name.")
+parser.add_argument("--output", required=True, help="Name of output file.")
 
 args = parser.parse_args()
 
 # === Assign Inputs ===
 results_txt = args.results
 excel_file = args.excel
-output_file = os.path.basename("output.xlsx")
+output_file = args.output
 
 tournament_name = args.tournament
 tournament_level = args.level
@@ -87,11 +90,15 @@ print(category_sheet.cell(row=81, column=3).value)
 new_tournament_column = category_sheet.max_column + 1
 first_empty_row = 0
 
-for row in range(6, category_sheet.max_row + 1):
+for row in range(7, category_sheet.max_row + 1):
     if category_sheet.cell(row=row, column=1).value == None:
         first_empty_row = row
         break
     category_sheet.cell(row=row, column=new_tournament_column).value = 0
+
+category_sheet.cell(row=1, column=new_tournament_column).value = tournament_name
+category_sheet.cell(row=2, column=new_tournament_column).value = 'Phoenix Foosball Cluj'
+category_sheet.cell(row=6, column=new_tournament_column).value = tournament_level
 
 print(first_empty_row)
 
@@ -99,15 +106,27 @@ for (place, name) in placements:
     found = False
     # Loop through column B (column index 2)
     for row in range(1, first_empty_row):
+        #print(row)
         cell_value = category_sheet.cell(row=row, column=2).value
-        if cell_value and str(cell_value).strip().lower() == name[0].strip().lower():
-            category_sheet.cell(row=row, column=new_tournament_column).value = points_mapping[place]
-            found = True
-            print(f"Player '{name[0]}' found on row {row}")
+        parts = name[0].strip().lower().split() # split the name of the player into 2 or more parts
+        if len(parts) > 2 :
+            #print(str(cell_value).strip().lower())
+            #print(name[0].strip().lower())
+            if cell_value and str(cell_value).strip().lower() == name[0].strip().lower():
+                category_sheet.cell(row=row, column=new_tournament_column).value = points_mapping[place]
+                found = True
+                print(f"Player '{name[0]}' found on row {row}")
+        else:
+            first_last = " ".join(parts)
+            last_first = " ".join(parts[::-1])
+            if (cell_value and unidecode(str(cell_value).strip().lower()) == unidecode(first_last)) or (cell_value and unidecode(str(cell_value).strip().lower()) == unidecode(last_first)) :
+                category_sheet.cell(row=row, column=new_tournament_column).value = points_mapping[place]
+                found = True
+                print(f"Player '{name[0]}' found on row {row}")
     if not found:
         print(f"Player {name[0]} wasn't found in excel. Adding as a new row...")
         category_sheet.cell(row=first_empty_row, column=1).value = first_empty_row - 5
-        category_sheet.cell(row=first_empty_row, column=2).value = name[0]
+        category_sheet.cell(row=first_empty_row, column=2).value = unidecode(name[0])
         category_sheet.cell(row=first_empty_row, column=new_tournament_column).value = points_mapping[place]
 
         # Fill empty cells in new row
